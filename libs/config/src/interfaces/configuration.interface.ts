@@ -11,12 +11,19 @@ interface Microservice {
   database: string;
 }
 
+interface Redis {
+  host: string;
+  port: number;
+  ttl: number;
+}
+
 export interface Configuration {
-  version: VersionValue;
-  environment: string;
-  jwtSecret: string;
-  jwtExpirationTime: string;
-  microservices: {
+  readonly version: VersionValue;
+  readonly environment: string;
+  readonly jwtSecret: string;
+  readonly jwtExpirationTime: string;
+  readonly redis: Redis;
+  readonly microservices: {
     [key in MicroserviceEnum]: Microservice;
   };
 }

@@ -11,6 +11,11 @@ export default (): Configuration => ({
   environment: process.env.NODE_ENV || 'development',
   jwtSecret: process.env.JWT_SECRET || 'secret',
   jwtExpirationTime: process.env.JWT_EXPIRATION_TIME || '60s',
+  redis: {
+    host: process.env.REDIS_HOST || 'localhost',
+    port: parseInt(process.env.REDIS_PORT || '6379', 10),
+    ttl: parseInt(process.env.REDIS_TTL || '600', 10),
+  },
   microservices: {
     user: {
       prefix: process.env.MICROSERVICE_USER_PREFIX || 'user',

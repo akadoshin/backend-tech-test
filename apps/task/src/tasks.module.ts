@@ -4,6 +4,7 @@ import {
   ConfigService,
   ConfigModule as NestConfigModule,
 } from '@nestjs/config';
+import { CacheModule } from '@nestjs/cache-manager';
 
 /** Configuration */
 import { ConfigModule } from '@config/config';
@@ -16,7 +17,7 @@ import { TasksService } from './service/tasks.service';
 
 /** Entities */
 import { TaskEntity } from './entities/task.entity';
-import { JwtModule } from '@nestjs/jwt';
+// import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -38,15 +39,16 @@ import { JwtModule } from '@nestjs/jwt';
       inject: [ConfigService],
     }),
     TypeOrmModule.forFeature([TaskEntity]),
-    JwtModule.registerAsync({
-      useFactory: async (configService: ConfigService) => ({
-        secret: configService.get('jwtSecret'),
-        signOptions: {
-          expiresIn: configService.get('jwtExpirationTime'),
-        },
-      }),
-      inject: [ConfigService],
-    }),
+    // JwtModule.registerAsync({
+    //   useFactory: async (configService: ConfigService) => ({
+    //     secret: configService.get('jwtSecret'),
+    //     signOptions: {
+    //       expiresIn: configService.get('jwtExpirationTime'),
+    //     },
+    //   }),
+    //   inject: [ConfigService],
+    // }),
+    CacheModule.register(),
   ],
   controllers: [TasksController],
   providers: [TasksService],

@@ -7,8 +7,9 @@ import {
   ParseIntPipe,
   Patch,
   Post,
-  UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
+import { CacheInterceptor, CacheKey } from '@nestjs/cache-manager';
 
 /** Services */
 import { TasksService } from '../service/tasks.service';
@@ -17,9 +18,6 @@ import { TasksService } from '../service/tasks.service';
 import { CreateTaskDto } from '../dto/create-task.dto';
 import { UpdateTaskDto } from '../dto/update-task.dto';
 
-import { JwtAuthGuardGuard } from '@config/config/guards/jwt-auth-guard/jwt-auth-guard.guard';
-
-@UseGuards(JwtAuthGuardGuard)
 @Controller()
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
@@ -29,11 +27,14 @@ export class TasksController {
     return this.tasksService.create(createTaskDto);
   }
 
+  @UseInterceptors(CacheInterceptor)
+  @CacheKey('tasks')
   @Get()
   async findAll() {
     return this.tasksService.findAll();
   }
 
+  @UseInterceptors(CacheInterceptor)
   @Get(':id')
   async findOne(@Param('id', ParseIntPipe) id: number) {
     return this.tasksService.findOne(id);
