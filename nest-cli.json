@@ -1,24 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/backend-tech-test/src",
+  "sourceRoot": "apps/user/src",
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/backend-tech-test/tsconfig.app.json"
+    "tsConfigPath": "apps/user/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/backend-tech-test",
+  "root": "apps/user",
   "projects": {
-    "backend-tech-test": {
-      "type": "application",
-      "root": "apps/backend-tech-test",
-      "entryFile": "main",
-      "sourceRoot": "apps/backend-tech-test/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/backend-tech-test/tsconfig.app.json"
-      }
-    },
     "user": {
       "type": "application",
       "root": "apps/user",
@@ -35,6 +26,15 @@
       "sourceRoot": "apps/task/src",
       "compilerOptions": {
         "tsConfigPath": "apps/task/tsconfig.app.json"
+      }
+    },
+    "config": {
+      "type": "library",
+      "root": "libs/config",
+      "entryFile": "index",
+      "sourceRoot": "libs/config/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/config/tsconfig.lib.json"
       }
     }
   }
