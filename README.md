@@ -42,7 +42,7 @@ $ npm start user
 $ npm run test
 ```
 
-[<img src="./.git/test.png">]
+[<img src="test.png">]
 
 ```bash
 # test coverage
@@ -51,7 +51,7 @@ $ npm run test:cov
 
 Todos los services y controller tienen su prueba
 
-<img src="./.git/cov.png" width="200" />
+<img src="cov.png" width="200" />
 
 ## Probando la aplicacion con Postman
 
@@ -63,13 +63,13 @@ Dejo la siguiente coleccion en PostMan para que puedas rapidamente probar los se
 
 tiene una carpeta por microservicio.
 
-## [<img src="./.git/folders.png">]
+## [<img src="folders.png">]
 
 ### La carpeta de user
 
 tiene dos servicios. cuando ejecutes cualquiera de ellos automaticamente se copiara el **access_token** al Authorization.
 
-[<img src="./.git/user.png">]
+[<img src="user.png">]
 
 ## <mark>_no es necesario que lo copies manualmente_</mark>
 
@@ -77,4 +77,4 @@ tiene dos servicios. cuando ejecutes cualquiera de ellos automaticamente se copi
 
 tiene la estructura basica para probar el _CRUD_
 
-[<img src="./.git/task.png">]
+[<img src="task.png">]
