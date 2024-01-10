@@ -25,7 +25,7 @@ import { Transport } from '@nestjs/microservices';
     options: {
       client: {
         clientId: 'user',
-        brokers: ['localhost:9092'],
+        brokers: ['host.docker.internal:9094'],
       },
       consumer: {
         groupId: 'user-consumer',
@@ -69,6 +69,6 @@ import { Transport } from '@nestjs/microservices';
    */
   app.setGlobalPrefix(<string>configService.get('microservices.user.prefix'));
 
-  await app.startAllMicroservices();
+  // await app.startAllMicroservices();
   await app.listen(<number>configService.get('microservices.user.port'));
 })();
