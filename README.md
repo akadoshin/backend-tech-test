@@ -32,7 +32,7 @@ $ npm install
 $ npm start user
 
 # Start the microservice task
-$ npm start user
+$ npm start task
 ```
 
 ## Test
