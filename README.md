@@ -42,7 +42,7 @@ $ npm start user
 $ npm run test
 ```
 
-[<img src="test.png">]
+![test](https://github.com/akadoshin/backend-tech-test/assets/23127169/50c3bbca-0fea-49b5-a378-46b49dd7ec25)
 
 ```bash
 # test coverage
@@ -51,7 +51,7 @@ $ npm run test:cov
 
 Todos los services y controller tienen su prueba
 
-<img src="cov.png" width="200" />
+![cov](https://github.com/akadoshin/backend-tech-test/assets/23127169/57d29b71-2fd7-4098-aeb0-c9cf7f40ff52)
 
 ## Probando la aplicacion con Postman
 
@@ -63,13 +63,13 @@ Dejo la siguiente coleccion en PostMan para que puedas rapidamente probar los se
 
 tiene una carpeta por microservicio.
 
-## [<img src="folders.png">]
+![folders](https://github.com/akadoshin/backend-tech-test/assets/23127169/adb6de4a-002f-4dc5-8475-f5150627c8d3)
 
 ### La carpeta de user
 
 tiene dos servicios. cuando ejecutes cualquiera de ellos automaticamente se copiara el **access_token** al Authorization.
 
-[<img src="user.png">]
+![user](https://github.com/akadoshin/backend-tech-test/assets/23127169/59c20795-5ec4-4683-962d-b1e36183b6b8)
 
 ## <mark>_no es necesario que lo copies manualmente_</mark>
 
@@ -77,4 +77,5 @@ tiene dos servicios. cuando ejecutes cualquiera de ellos automaticamente se copi
 
 tiene la estructura basica para probar el _CRUD_
 
-[<img src="task.png">]
+![task](https://github.com/akadoshin/backend-tech-test/assets/23127169/4c6e2492-3ba9-4697-9c77-903a9d985866)
+
