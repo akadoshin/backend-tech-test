@@ -41,7 +41,7 @@ export class AuthenticateService {
         const match = await this.comparePassword(authUserDto, user.password);
         if (match) {
           const access_token = await this.generateToken(user);
-          return { user, access_token };
+          return { ...user, access_token };
         }
       } else {
         throw new Error('User Not Found');

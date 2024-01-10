@@ -5,7 +5,6 @@ import {
 } from '@nestjs/config';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
-// import { JwtModule } from '@nestjs/jwt';
 
 /** Configuration */
 import { ConfigModule } from '@config/config';

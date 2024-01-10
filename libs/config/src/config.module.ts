@@ -14,8 +14,8 @@ import { JwtAuthGuardGuard } from './guards/jwt-auth-guard/jwt-auth-guard.guard'
 
 /**
  * @description
- * This module is used to configure all the shared Modules
- * and Services between the microservices
+ * This module is used to configure all the shared modules
+ * and Services that will be used the microservices
  */
 @Module({
   imports: [

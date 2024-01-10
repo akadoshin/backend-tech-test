@@ -5,8 +5,8 @@ describe('Configuration', () => {
     const configuration = config();
 
     expect(configuration).toEqual({
-      version: expect.any(String),
-      environment: 'development',
+      version: expect.any(Symbol),
+      environment: 'test',
       jwtSecret: 'secret',
       jwtExpirationTime: '60s',
       redis: {

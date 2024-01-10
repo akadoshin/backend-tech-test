@@ -19,6 +19,10 @@ import { TasksService } from './service/tasks.service';
 import { TaskEntity } from './entities/task.entity';
 // import { JwtModule } from '@nestjs/jwt';
 
+/**
+ * @description
+ * Microservice Task module - this module is a simple CRUD
+ */
 @Module({
   imports: [
     ConfigModule,
@@ -39,16 +43,9 @@ import { TaskEntity } from './entities/task.entity';
       inject: [ConfigService],
     }),
     TypeOrmModule.forFeature([TaskEntity]),
-    // JwtModule.registerAsync({
-    //   useFactory: async (configService: ConfigService) => ({
-    //     secret: configService.get('jwtSecret'),
-    //     signOptions: {
-    //       expiresIn: configService.get('jwtExpirationTime'),
-    //     },
-    //   }),
-    //   inject: [ConfigService],
-    // }),
-    CacheModule.register(),
+    CacheModule.register({
+      isGlobal: true,
+    }),
   ],
   controllers: [TasksController],
   providers: [TasksService],

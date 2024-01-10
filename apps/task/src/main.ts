@@ -11,10 +11,7 @@ import {
 
 /** Modules */
 import { TasksModule } from './tasks.module';
-import { Transport } from '@nestjs/microservices';
-
-/** Guards */
-// import { JwtAuthGuardGuard } from '@config/config/guards/jwt-auth-guard/jwt-auth-guard.guard';
+// import { Transport } from '@nestjs/microservices';
 
 /**
  * Bootstrap the application
@@ -23,9 +20,9 @@ import { Transport } from '@nestjs/microservices';
   const app = await NestFactory.create<NestExpressApplication>(TasksModule);
   const configService = app.get(ConfigService);
 
-  app.connectMicroservice({
-    transport: Transport.TCP,
-  });
+  // app.connectMicroservice({
+  //   transport: Transport.KAFKA,
+  // });
 
   /**
    * Enable Automatic Validation
@@ -63,6 +60,6 @@ import { Transport } from '@nestjs/microservices';
    */
   app.setGlobalPrefix(<string>configService.get('microservices.task.prefix'));
 
-  await app.startAllMicroservices();
+  // await app.startAllMicroservices();
   await app.listen(<number>configService.get('microservices.task.port'));
 })();

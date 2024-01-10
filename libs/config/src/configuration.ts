@@ -4,6 +4,7 @@ import { VERSION_NEUTRAL } from '@nestjs/common';
 import { Configuration } from './interfaces/configuration.interface';
 
 /**
+ * @description
  * Load the configuration for environment variables
  */
 export default (): Configuration => ({
