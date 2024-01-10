@@ -71,7 +71,7 @@ tiene dos servicios. cuando ejecutes cualquiera de ellos automaticamente se copi
 
 ![user](https://github.com/akadoshin/backend-tech-test/assets/23127169/59c20795-5ec4-4683-962d-b1e36183b6b8)
 
-## <mark>_no es necesario que lo copies manualmente_</mark>
+<mark>_no es necesario que lo copies manualmente_</mark>
 
 ### La carpeta de task
 
