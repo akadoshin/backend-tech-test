@@ -1,48 +1,38 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+# Code Challenge
+
+<div style="display:flex;align-items:flex-end;">
+<p style="font-size: 20px">Desarollo de dos microservicios&nbsp;<b>User</b>&nbsp;y&nbsp;<b>Task</b>&nbsp;usando Nestjs como monorepo</p>
+
+<p align="right" style="margin-left:auto;">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="80" alt="Nest Logo" /></a>
 </p>
+</div>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Como correr la aplicacion
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+Cada microservicio tiene un dockerfile y se generara una imagen por cada uno.
+para correr la aplicacion usa docker compose con el siguiente comando:
 
 ```bash
-$ npm install
+# npm script
+$ npm run docker:compose
 ```
 
-## Running the app
+esto generara las imagenes para cada uno de los microservicios y iniciara el docker-compose despues de eso
+
+## Como correr la aplicacion en Local
+
+de igual modo puedes correr la aplicacion en local normalmente
 
 ```bash
-# development
-$ npm run start
+# Install dependencies
+$ npm install
+ 
+# Start the microservice user
+$ npm start user
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# Start the microservice task
+$ npm start user
 ```
 
 ## Test
@@ -51,23 +41,29 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
 # test coverage
 $ npm run test:cov
 ```
 
-## Support
+## Probando la aplicacion con Postman
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Dejo la siguiente coleccion en PostMan para que puedas rapidamente probar los servicios
 
-## Stay in touch
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://app.getpostman.com/run-collection/3968266-8c95f753-5973-4c1d-9bc4-4114ffddccaf?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D3968266-8c95f753-5973-4c1d-9bc4-4114ffddccaf%26entityType%3Dcollection%26workspaceId%3D953d08df-9a33-4dd0-a219-09d80eec3642)
+---
+### La coleccion
+tiene una carpeta por microservicio.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+[<img src="./.git/folders.png">]
+---
+### La carpeta de user
+tiene dos servicios. cuando ejecutes cualquiera de ellos automaticamente se copiara el **access_token** al Authorization.
 
-## License
+[<img src="./.git/user.png">]
 
-Nest is [MIT licensed](LICENSE).
+<mark>*no es necesario que lo copies manualmente*</mark>
+---
+### La carpeta de task
+tiene la estructura basica para probar el *CRUD*
+
+[<img src="./.git/task.png">]
